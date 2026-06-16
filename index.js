@@ -53,7 +53,7 @@ app.post('/search-jobs', async (req, res) => {
         const tavilyResponse = await axios.post('https://api.tavily.com/search', tavilyPayload);
         const rawData = JSON.stringify(tavilyResponse.data.results);
 
-        const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+        const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
         const prompt = `
         You are an expert tech recruiter. I am giving you raw web search data.
         Your task is to find recently posted jobs based on this search.
